@@ -44,7 +44,7 @@ app.get("/home", (req, res) => {
 
 const io = new Server(server, {
     cors: {
-        origin: "https://guppshupp.netlify.app/",
+        origin: "https://guppshupp.netlify.app",
         credentials: true
     }
 })
