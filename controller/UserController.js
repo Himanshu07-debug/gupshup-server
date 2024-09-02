@@ -59,7 +59,7 @@ export const loginUser = async (req, res) => {
         }
         else {
             const accessToken = jwt.sign(user.toJSON(), process.env.ACCESS_SECRET_KEY, { expiresIn: "20d"});
-            const refreshToken = jwt.sign(user.toJSON(), process.env.REFRESH_SECRET_KEY);
+            const refreshToken = jwt.sign(user.toJSON(), process.env.REFRESH_SECRET_KEY, { expiresIn: "20d"});
         
             res.status(200).json({ accessToken: accessToken, refreshToken: refreshToken,user:user});
         
